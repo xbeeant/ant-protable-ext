@@ -1,9 +1,9 @@
-# @ivs/pro-table
-`@ivs/pro-table` 是官方 `@ant/pro-table`的简易封装，保留原有的所有特性
+# @xstudio/pro-table
+`@xstudio/pro-table` 是官方 `@ant/pro-table`的简易封装，保留原有的所有特性
 
 # 安装
 ```
-npm install @ivs/pro-table
+npm install @xstudio/pro-table
 ```
 
 # 使用示例
@@ -12,7 +12,7 @@ npm install @ivs/pro-table
 ```
 import React from 'react';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
-import ProTable from '@ivs/pro-table';
+import ProTable from '@xstudio/pro-table';
 import { connect } from 'dva';
 import { PlusOutlined } from '@ant-design/icons';
 import { message, Divider, Popconfirm } from 'antd';
@@ -64,7 +64,7 @@ const StatisUserScore = props => {
 
   const deleteRecord = record => {
     dispatch({
-      type: 'statisUserScore/remove',
+      type: 'user/remove',
       payload: {
         taskId: record.taskId,
       },
@@ -83,6 +83,7 @@ const StatisUserScore = props => {
       valueType: 'option',
       render: (_, record) => [
         <a
+          key="edit"
           onClick={() => {
             setManageFormValues(record);
             setUpdateModalVisible(true);
@@ -90,8 +91,7 @@ const StatisUserScore = props => {
         >
           编辑
         </a>,
-        <Divider type="vertical" />,
-        <Popconfirm title="确认删除吗?" onConfirm={() => deleteRecord(record)}>
+        <Popconfirm title="确认删除吗?" key="del" onConfirm={() => deleteRecord(record)}>
           <a href="#">删除</a>
         </Popconfirm>,
       ],
