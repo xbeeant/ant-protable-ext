@@ -1,0 +1,44 @@
+{
+  "name": "@xstudio/pro-table",
+  "version": "1.0.0",
+  "description": "ant design protable的简单封装",
+  "main": "/lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.jsx --out-dir lib --copy-files",
+    "upload": "del /s /q lib & rd /q /s lib & npm run build & npm publish"
+  },
+  "keywords": [
+    "protable"
+  ],
+  "author": "xiaobiao",
+  "license": "MIT",
+  "dependencies": {
+    "@ant-design/pro-table": "^2.9.15",
+    "antd": "^4.8.0",
+    "react": "^16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xbeeant/ant-protable-ext.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "css-loader": "^3.5.2",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "react-dom": "^16.13.1",
+    "style-loader": "^1.1.4",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.7.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
