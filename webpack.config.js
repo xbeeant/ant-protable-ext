@@ -5,13 +5,22 @@ module.exports = {
     plugins: [
         new BundleAnalyzerPlugin()
     ],
-    entry: './index.jsx',
+    entry: './src/index.jsx',
     output: {
-        filename: process.env.NODE_ENV === 'production' ? 'ivs.protable.min.js' : 'ivs.protable.js',
+        filename: process.env.NODE_ENV === 'production' ? 'xstudio.protable.min.js' : 'xstudio.protable.js',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: [path.join(__dirname, 'src')],
+                options: {
+                    fix: true
+                }
+            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
