@@ -1,6 +1,6 @@
 {
   "name": "@xstudio/pro-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ant design protable的简单封装",
   "main": "/lib/index.js",
   "scripts": {
