@@ -6,6 +6,9 @@
 npm install @xstudio/pro-table
 ```
 
+# 特别说明
+对于和树形菜单等组件联动时，需要添加`rootId`属性，并赋值`rootId`的值为当前选择的值
+
 # 使用示例
 
 
